@@ -1,0 +1,10 @@
+<h1>All our flats</h1>
+<% @flats.each do |flat| %>
+  <p><%= flat.name %> <%= flat.description %></p>
+  <%= link_to "Edit", edit_flat_path(flat), class: "ml-3 text-warning" %>
+  <%= link_to "Remove #{flat.name}",
+            flat_path(flat),
+            method: :delete,
+            class: "ml-3 text-danger",
+            data: { confirm: "Are you sure?" } %>
+<% end %>
